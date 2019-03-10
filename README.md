@@ -3,6 +3,7 @@ Algolia powered Alexa skill to teach you and quiz you on US State capitals
 
 **Note:** I am attempting to create this project using ["README Driven Development"](http://tom.preston-werner.com/2010/08/23/readme-driven-development.html) as noted by [Dustin Coates](https://twitter.com/dcoates?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor), and, in turn, recommended to him, by [Vincent Voyer](https://twitter.com/vvoyer) in the post ["Perspectives on Building the Algolia Alexa Adapter"](https://www.talkingtocomputers.com/building-algolia-search-alexa-adapter).
 
+
 ## A small diversion...Developer Setup
 If you don't already use Node, get setup the right way:
 ### Install Node.js "the right way"
@@ -36,13 +37,26 @@ ALGOLIA_INDEX_NAME=YOUR_INDEX_NAME_OF_YOUR_CHOICE
 ```
 yarn
 ```
-5. The file `upload.js` has a script that will push the data from `state-capitals.json` into an Algolia index. Run the script with:
+5. The folder `utils/upload` has a script that will push the data from `us-state-capitals.json` into an Algolia index. Run the script with:
 ```
 yarn upload
 ```
+
 If interested, you can read more about the [Algolia Javascript API Client](https://www.algolia.com/doc/api-client/getting-started/install/javascript/), [indexing](https://www.algolia.com/doc/api-client/methods/indexing/), and [settings](https://www.algolia.com/doc/api-client/methods/settings/) for search relevance.
 
-6. Navigate to "Indices" in your Algolia Dashboard and select your index from the dropdown. You should see records with a data structure matching the objects in `state-capitals.json`
+6. Navigate to "Indices" in your Algolia Dashboard and select your named index from the dropdown. You should see records with a data structure in `us-state-capitals.json` like:
+
+```
+{
+    "stateName": "Maryland",
+    "stateCapital": "Annapolis",
+    "_geoloc": {
+        "lat": 38.972945,
+        "lng": -76.501157
+    },
+    "objectID": "1234ABCD"
+}
+```
 
 🎉 Congratulations! You've indexed with Algolia
 
