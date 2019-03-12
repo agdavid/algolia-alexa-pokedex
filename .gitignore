@@ -11,5 +11,6 @@ coverage/
 .eslintcache
 dist/
 .DS_Store
+lambda_upload.zip
 
 
