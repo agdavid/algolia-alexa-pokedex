@@ -5,16 +5,16 @@ const LaunchRequestHandler = {
       return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
     handle(handlerInput) {
-      const speechText = 'Welcome to Teach Me U.S. State Capitals!';
-      speechText += 'You can name a state to get it\`s capital.';
-      speechText += 'For example you can say, what\'s the capital of Maryland.';
+      const speechText = 'Welcome to the Pokedex!';
+      speechText += 'You can name a pokemon to get it\`s facts.';
+      speechText += 'For example you can say, find me Jigglypuff.';
   
-    const repromptText = 'Which state\'s capital would you like to hear?';
-    repromptText += 'For example you can say, what\'s the capital of Maryland.';
+      const repromptText = 'Which pokemon would you like to learn about?';
+      repromptText += 'For example you can say, find me Jigglypuff.';
       return handlerInput.responseBuilder
         .speak(speechText)
         .reprompt(repromptText)
-        .withSimpleCard('Teach Me U.S. State Capitals', speechText)
+        .withSimpleCard('Pokedex', speechText)
         .getResponse();
     }
   };
@@ -25,11 +25,11 @@ const LaunchRequestHandler = {
         && handlerInput.requestEnvelope.request.intent.name === 'FactRequestIntent';
     },
     handle(handlerInput) {
-      const speechText = 'You\'ve requested a state!';
+      const speechText = 'You\'ve requested a pokemon!';
   
       return handlerInput.responseBuilder
         .speak(speechText)
-        .withSimpleCard('Teach Me U.S. State Capitals', speechText)
+        .withSimpleCard('Pokedex', speechText)
         .getResponse();
     },
   };
@@ -40,15 +40,15 @@ const LaunchRequestHandler = {
         && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
     },
     handle(handlerInput) {
-      const speechText = 'You can name a state to get it\`s capital.';
-      speechText += 'For example you can say, what\'s the capital of Maryland.';
+      const speechText = 'You can name a pokemon to get it\`s facts.';
+      speechText += 'For example you can say, find me Jigglypuff.';
   
-      const repromptText = 'Which state\'s capital would you like to hear?';
-      repromptText += 'For example you can say, what\'s the capital of Maryland.';
+      const repromptText = 'Which pokemon would you like to learn about?';
+      repromptText += 'For example you can say, find me Jigglypuff.';
       return handlerInput.responseBuilder
         .speak(speechText)
         .reprompt(repromptText)
-        .withSimpleCard('Teach Me U.S. State Capitals', speechText)
+        .withSimpleCard('Pokedex', speechText)
         .getResponse();
     },
   };
@@ -60,11 +60,11 @@ const LaunchRequestHandler = {
           || handlerInput.requestEnvelope.request.intent.name === 'AMAZON.StopIntent');
     },
     handle(handlerInput) {
-      const speechText = 'Thanks for learning with me. Goodbye!';
+      const speechText = 'Goodbye!';
   
       return handlerInput.responseBuilder
         .speak(speechText)
-        .withSimpleCard('Teach Me U.S. State Capitals', speechText)
+        .withSimpleCard('Pokedex', speechText)
         .getResponse();
     },
   };
