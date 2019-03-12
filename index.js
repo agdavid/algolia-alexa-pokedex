@@ -19,6 +19,21 @@ const LaunchRequestHandler = {
     }
   };
 
+  const FactRequestIntentHandler = {
+    canHandle(handlerInput) {
+      return handlerInput.requestEnvelope.request.type === 'IntentRequest'
+        && handlerInput.requestEnvelope.request.intent.name === 'FactRequestIntent';
+    },
+    handle(handlerInput) {
+      const speechText = 'You\'ve requested a state!';
+  
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .withSimpleCard('Teach Me U.S. State Capitals', speechText)
+        .getResponse();
+    },
+  };
+
   const HelpIntentHandler = {
     canHandle(handlerInput) {
       return handlerInput.requestEnvelope.request.type === 'IntentRequest'
@@ -84,6 +99,7 @@ const LaunchRequestHandler = {
   exports.handler = skillBuilder
     .addRequestHandlers(
       LaunchRequestHandler,
+      FactRequestIntentHandler,
       HelpIntentHandler,
       CancelAndStopIntentHandler,
       SessionEndedRequestHandler
