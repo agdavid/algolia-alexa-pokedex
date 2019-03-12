@@ -27,36 +27,28 @@ const index = client.initIndex(indexName);
 
 /////////////////////////////////////////////
 // Add to index with objects from a JSON file
-let states = [];
+let list = [];
 console.log('Starting JSON processing');
-fs.createReadStream(path.join(__dirname, 'us-state-capitals.json'), { encoding: 'utf8' })
+fs.createReadStream(path.join(__dirname, 'pokedex.json'), { encoding: 'utf8' })
   .pipe(JSONStream.parse('*'))
   .pipe(
     es.through(
       (obj) => {
-          let algoliaState = {
-            stateName: obj.state,
-            stateCapital: obj.city,
-            _geoloc: {
-                lat: obj.lat,
-                lng: obj.lon,
-            }
-          };
-          states.push(algoliaState)},
+          list.push(obj)},
       () => {
         console.log('Completed JSON processing');
-        console.log('Chunking States into chunks of 10');
-        const chunks = _.chunk(states, 10);
-        console.log('Starting transfer of states to index');
+        console.log('Chunking data into chunks of 10');
+        const chunks = _.chunk(list, 10);
+        console.log('Starting transfer of items to index');
         Promise.all(
           chunks.map(chunk =>
             index
               .addObjects(chunk)
-              .then(() => console.log('Finished chunk of 10 states'))
+              .then(() => console.log('Finished chunk of 10 items'))
           )
         ).then(() => {
           console.log(
-            `Finished transfer of ${states.length} products to ${indexName} index`
+            `Finished transfer of ${list.length} products to ${indexName} index`
           );
           process.exit();
         });
