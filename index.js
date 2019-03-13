@@ -1,3 +1,25 @@
+const dotenvExtended = require('dotenv-extended');
+const dotenvParseVariables = require('dotenv-parse-variables');
+const algoliasearch = require('algoliasearch');
+const ALGOLIA_APP_ID = process.env.ALGOLIA_APP_ID;
+const ALGOLIA_API_KEY = process.env.ALGOLIA_SEARCH_API_KEY;
+const ALGOLIA_INDEX_NAME = process.env.ALGOLIA_INDEX_NAME;
+const algolia = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_API_KEY);
+const index = algolia.initIndex(ALGOLIA_INDEX_NAME);
+
+// load .env variables
+dotenvParseVariables(
+  dotenvExtended.load({
+    // assign variables to process.env object for accessibility
+    assignToProcessEnv: true,
+    // displays "missing .env file", no need in production, where we use real env variables
+    silent: process.env.APP_ENV === 'production',
+    errorOnMissing: true,
+    // also use process.env to fill variables in, only in production
+    includeProcessEnv: process.env.APP_ENV === 'production',
+  })
+);
+
 let intentHandlers = {};
 
 exports.handler = function (event, context) {
@@ -148,7 +170,7 @@ function onLaunch(launchRequest, session, response) {
   response.done();
 }
 
-intentHandlers['GetPokemonInfo'] = function(request,session,response,slots) {
+intentHandlers['GetPokemonInfo'] = async function(request,session,response,slots) {
 
   if(slots.PokemonName === undefined) {
     response.speechText = 'Looks like you forgot to mention a pokemon. Which pokemon would you like to find? ';
@@ -156,15 +178,32 @@ intentHandlers['GetPokemonInfo'] = function(request,session,response,slots) {
     response.shouldEndSession = false;
     response.done();
     return;
-  }
+  } else {
 
-  response.cardTitle = `Pokemon Lookup results for: ${slots.PokemonName}`;
-  response.cardContent = '';
-  
-  response.speechText = `You\'ve requested ${slots.PokemonName}! `;
-  response.cardContent += response.speechText;
-  response.shouldEndSession = true;
-  response.done();
+    response.cardTitle = `Pokemon Lookup results for: ${slots.PokemonName}`;
+    response.cardContent = '';
+
+    const results = await index.search({
+      query: slots.PokemonName,
+      hitsPerPage: 1
+    });
+
+    if (results.hits.length) {
+      let pokemon = results.hits[0];
+      response.speechText = `You\'ve requested ${slots.PokemonName}! `;
+      response.speechText += `Gotta catch \'em all and you caught \'em. ${pokemon.name.english} is of type ${pokemon.type.join(', ')}. `;
+      response.speechText += `HP of ${pokemon.base.hitPoint}, attack of ${pokemon.base.attack}, and defense of ${pokemon.base.defense}`;
+      response.cardContent += response.speechText;
+      response.shouldEndSession = true;
+      response.done();
+    } else {
+      response.speechText = `You\'ve requested ${slots.PokemonName}! `;
+      response.speechText += `Didn\'t catch \'em`;
+      response.cardContent += response.speechText;
+      response.shouldEndSession = true;
+      response.done();
+    }
+  }
 }
 
 intentHandlers['AMAZON.StopIntent'] = function(request,session,response,slots) {
