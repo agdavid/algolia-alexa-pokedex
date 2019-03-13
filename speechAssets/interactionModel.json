@@ -1,24 +1,8 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "my pokemon dictionary",
+            "invocationName": "pokemon lookup",
             "intents": [
-                {
-                    "name": "FactRequestIntent",
-                    "slots": [
-                        {
-                            "name": "PokemonName",
-                            "type": "POKEMON_NAMES"
-                        }
-                    ],
-                    "samples": [
-                        "lookup {PokemonName}",
-                        "find me {PokemonName}",
-                        "i want to learn about {PokemonName}",
-                        "{PokemonName}",
-                        "tell me about {PokemonName}"
-                    ]
-                },
                 {
                     "name": "AMAZON.CancelIntent",
                     "samples": []
@@ -30,6 +14,20 @@
                 {
                     "name": "AMAZON.StopIntent",
                     "samples": []
+                },
+                {
+                    "name": "GetPokemonInfo",
+                    "slots": [
+                        {
+                            "name": "PokemonName",
+                            "type": "POKEMON_NAMES"
+                        }
+                    ],
+                    "samples": [
+                        "{PokemonName}",
+                        "get {PokemonName}",
+                        "find {PokemonName}"
+                    ]
                 },
                 {
                     "name": "AMAZON.NavigateHomeIntent",
