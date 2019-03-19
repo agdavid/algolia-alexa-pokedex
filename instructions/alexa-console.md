@@ -7,7 +7,7 @@
 
 3.  From the **Alexa Skills Console** select the **Create Skill** button near the top-right of the list of your Alexa Skills.
 
-4. Give your new skill a **Name**, such as "Pokemon Lookup" This is the name that will be shown in the Alexa Skills Store, and the name your users will refer to. Also change the locale if so desired.
+4. Give your new skill a **Name**, such as "Pokemon Lookup" This is the name that your users will refer to.
 
 5. Keep the **Custom** model selected, keep the **Provision your own** hosting method selected, and select the **Create Skill** button at the top right.
 
@@ -19,12 +19,12 @@
 
 9. Click **Build Model**.
 
-	**Note:** You should notice that **Intents** and **Slot Types** will auto populate based on the JSON Interaction Model that you have now applied to your skill. Feel free to explore the changes here, to learn about **Intents**, **Slots**, and **Utterances** open our [technical documentation in a new tab](https://developer.amazon.com/docs/custom-skills/create-intents-utterances-and-slots.html).
+	**Note:** You should notice that **Intents** and **Slot Types** will auto populate based on the JSON Interaction Model that you have now applied to your skill. Feel free to explore the changes here, to learn about **Intents**, **Slots**, and **Utterances** open the Alexa [technical documentation in a new tab](https://developer.amazon.com/docs/custom-skills/create-intents-utterances-and-slots.html).
 
 10. **Optional:** Select an intent by expanding the **Intents** from the left side navigation panel. Add some more sample utterances for your newly generated intents. Think of all the different ways that a user could request to make a specific intent happen. A few examples are provided. Be sure to click **Save Model** and **Build Model** after you're done making changes here.
 
 11. If your interaction model builds successfully, proceed to the next step. If not, you should see an error. Try to resolve the errors.
 
-In our next step of this guide, we will create our Lambda function in the AWS developer console, but keep this browser tab open, because we will be returning here again.
+In our next step of this guide, we will be creating our Lambda function in the AWS developer console, but keep this browser tab open, because we will be returning here again.
 
 [GO TO Step 3 - AWS Lambda Function](./lambda-function.md)

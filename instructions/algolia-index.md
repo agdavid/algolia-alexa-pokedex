@@ -11,10 +11,10 @@ yarn
 cp .env.defaults .env
 ```
 
-3. **Go to the [Algolia homepage](https://www.algolia.com/). In the top-right corner of the screen, click the "Login" button.** (If you don't already have an account, you can **create a new one for free [here].(https://www.algolia.com/users/sign_up)**)
+3. **Go to the [Algolia homepage](https://www.algolia.com/). In the top-right corner of the screen, click the "Login" button.** (If you don't already have an account, you can **create a new one for free [here](https://www.algolia.com/users/sign_up)**.)
 
 
-4. Once you have signed into the Algolia Dashboard, navigate to the lefthand side of the screen and Select the **API Keys** Link to find the Application ID and Admin API Key. Set the following values in your `.env` file:
+4. Once you have signed into the Algolia Dashboard, navigate to the lefthand side of the screen and Select the **API keys** Link to find the Application ID and Admin API Key. Set the following values in your `.env` file:
 ```
 ALGOLIA_APP_ID=YOUR_APP_ID
 ALGOLIA_ADMIN_API_KEY=YOUR_ADMIN_API_KEY
@@ -26,7 +26,7 @@ ALGOLIA_INDEX_NAME=YOUR_INDEX_NAME_OF_YOUR_CHOICE
 yarn upload
 ```
 
-6. Back in the Algolia Dashboard, navigate to the lefthand side of the screen and Select the **Indices** Link then from the top of the screen Select the **Indices** Link again. Locate your named index from the dropdown. You should see records with a data structure that matches `pokedex.json` like:
+6. Back in the Algolia Dashboard, navigate to the lefthand side of the screen and Select the **Indices** Link then from the top of the screen Select the **Indices** Link again. In the upper righthand of the screen, locate your named index by typing the name in the **"Filter indices"** searchbox, then select your index. You should see records with a data structure that matches `pokedex.json` like:
 
 ```
 {
@@ -54,8 +54,8 @@ yarn upload
 
 🎉 Congratulations! You've indexed with Algolia
 
-Cheers to [Jason Sooter](https://twitter.com/functionalstoic) for some great examples in JSON chunking
+Cheers to [Jason Sooter](https://twitter.com/functionalstoic) for some great examples in JSON chunking for the upload script.
 
-In our next step of this guide, we will build our interaction model in the **Amazon Developer Portal**, that is the voice components that enable a user to invoke our Alexa skill (the LaunchRequest) and detect our request (the IntentRequest)
+In our next step of this guide, we will be building our interaction model in the **Amazon Developer Portal**, that is the voice components that enable a user to invoke our Alexa skill (the LaunchRequest) and detect our request (the IntentRequest)
 
 [GO TO Step 2 - Alexa Interaction Model](./alexa-console.md)
