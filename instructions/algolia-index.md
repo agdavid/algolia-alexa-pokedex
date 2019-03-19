@@ -1,33 +1,32 @@
 
 # Create the Algolia Index
 
-In this section you will utilize the [Algolia JavaScript API client](https://www.algolia.com/doc/api-client/getting-started/install/javascript/) to push JSON data to a searchable Algolia index.
+1. From the command line, install the node modules:
+```
+yarn
+```
 
-1. Login to your Algolia account or Sign-up for an account [here](https://www.algolia.com/users/sign_up) if you don't have one already (Note: You can get a free [Community](https://www.algolia.com/pricing/) plan)
-
-2. Copy the `.env.defaults` file and name it `.env` for your configuration variables: 
+2. From the command line, copy the `.env.defaults` file and name it `.env` for your configuration variables: 
 ```
 cp .env.defaults .env
 ```
 
-3. Navigate to the **"API Keys"** tab in your Algolia Dashboard to find the Application ID and Admin API Key, then in your `.env` file set the following values:
+3. **Go to the [Algolia homepage](https://www.algolia.com/). In the top-right corner of the screen, click the "Login" button.** (If you don't already have an account, you can **create a new one for free [here].(https://www.algolia.com/users/sign_up)**)
+
+
+4. Once you have signed into the Algolia Dashboard, navigate to the lefthand side of the screen and Select the **API Keys** Link to find the Application ID and Admin API Key. Set the following values in your `.env` file:
 ```
 ALGOLIA_APP_ID=YOUR_APP_ID
 ALGOLIA_ADMIN_API_KEY=YOUR_ADMIN_API_KEY
 ALGOLIA_INDEX_NAME=YOUR_INDEX_NAME_OF_YOUR_CHOICE
 ``` 
 
-4. Install the node modules:
-```
-yarn
-```
-
-5. The folder [`utils/upload`](../utils/upload/src/index.js) has a script that will push the data from [`pokedex.json`](../utils/upload/src/pokedex.json) into an Algolia index. Run the script with:
+5. The folder [`utils/upload`](../utils/upload/src/index.js) has a script that will push the JSON data from [`pokedex.json`](../utils/upload/src/pokedex.json) into an Algolia index. From the command line, run the script with:
 ```
 yarn upload
 ```
 
-6. Navigate to **"Indices"** in your Algolia Dashboard and select your named index from the dropdown. You should see records with a data structure that matches `pokedex.json` like:
+6. Back in the Algolia Dashboard, navigate to the lefthand side of the screen and Select the **Indices** Link then from the top of the screen Select the **Indices** Link again. Locate your named index from the dropdown. You should see records with a data structure that matches `pokedex.json` like:
 
 ```
 {
@@ -57,4 +56,6 @@ yarn upload
 
 Cheers to [Jason Sooter](https://twitter.com/functionalstoic) for some great examples in JSON chunking
 
-[➡️ Step 2 - Alexa Developer Console](./alexa-console.md)
+In our next step of this guide, we will build our interaction model in the **Amazon Developer Portal**, that is the voice components that enable a user to invoke our Alexa skill (the LaunchRequest) and detect our request (the IntentRequest)
+
+[GO TO Step 2 - Alexa Interaction Model](./alexa-console.md)
