@@ -27,4 +27,4 @@
 
 In our next step of this guide, we will be creating our Lambda function in the AWS developer console, but keep this browser tab open, because we will be returning here again.
 
-[GO TO Step 3 - AWS Lambda Function](./lambda-function.md)
+[GO TO Step 3 - Setup AWS Lambda Function](./lambda-setup.md)
