@@ -1,1 +1,31 @@
-In Alexa test.
+## Testing Your Alexa Skill
+
+So far, we have created a Voice User Interface, and deployed code to a backend service linked to the skill.  Your skill is now ready to test.
+
+1.  If you are not continuing immediately from the previous step, **go back to the [Amazon Developer Portal](https://developer.amazon.com/alexa/console/ask) and select your skill from the list.**
+
+2. Access the **Alexa Simulator**, by selecting the **Test** tab from the top navigation menu.  Your browser may request permission to access your microphone.  While it is recommended to do so, it is not required.  Do note that if you don't allow access to the microphone, you must type your utterances to Alexa in the simulator.
+
+3. Notice the dropdown labeled "Skill testing is enabled in:", found just underneath the top navigation menu.
+Toggle the dropdown from **Off** to **Development**.
+
+4. To validate that your skill is working as expected, invoke your skill from the **Alexa Simulator** just below. You can either type or click and hold the mic from the input box to use your voice.
+	1. **Type** "Open" followed by the invocation name you gave your skill previously. For example, "Open pokemon lookup".
+	2. **Use your voice** by clicking and holding the mic on the side panel and saying "Open" followed by the invocation name you gave your skill.
+	3. **If you've forgotten the invocation name** for your skill, revisit the **Build** panel on the top navigation menu and select **Invocation** from the sidebar to review it.
+
+* *Tip: Always finish your test by saying "stop" to formally end your session.*
+
+
+5. Ensure your skill works the way that you designed it to.
+	* After you interact with the Alexa Simulator, you should see the Skill I/O **JSON Input** and **JSON Output** boxes get populated with JSON data. You can also view the **Device Log** to trace your steps.
+	* If it's not working as expected, you can dig into the JSON to see exactly what Alexa is sending and receiving from the endpoint. If something is broken, you can find the error in AWS Cloudwatch.
+
+
+6.  **Other testing methods to consider:**
+
+    *  [Echosim.io](https://echosim.io) - a browser-based Alexa skill testing tool that makes it easy to test your skills without carrying a physical device everywhere you go.
+
+**If your sample skill is working properly, congratulations!**
+
+I hope you enjoyed this hands-on Algolia + Alexa tutorial. Questions or comments? Feel free to let me know on [Twitter](https://twitter.com/adavid128)
