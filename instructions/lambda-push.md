@@ -26,14 +26,18 @@ $ aws configure
 
 11. When prompted, **copy-and-paste the "Access key ID" and the "Secret access key" from the AWS console**. Then **leave the region as default and JSON as default output**.
 
-12. Open the file [`publish.sh`](../publish.sh) and make sure that in **line 3 you replace "PokemonLookup" with the name of your Lambda function**. This uploads your `index.js` file and `node_modules` througha zip file to the named Lambda function.
+12. Open the file [`publish.sh`](../publish.sh) and make sure that in **line 3 you replace "PokemonLookup" with the name of your Lambda function**. This uploads your `index.js` file and `node_modules` through a zip file to the named Lambda function.
 
-13. **Return to the [Lambda console](https://console.aws.amazon.com/lambda/hom)** and on the left hand navigation panel, select **Functions**, and you should see the **"Last modified"** column of your function updated recently.
+13. Push your local code to the Lambda console:
+```bash
+$ source publish.sh
+```
+
+14. **Return to the [Lambda console](https://console.aws.amazon.com/lambda/home)** and on the left hand navigation panel, select **Functions**, and you should see the **"Last modified"** column of your function updated recently.
 
 🎉 Congratulations! You've pushed a Lambda function from the CLI
 
 In our next step of this guide, we will pull everything together by testing your Alexa skill.
 
-[GO TO Step 5 - Testing](./alexa-test
-.md)
+[GO TO Step 5 - Connecting Alexa Skill to Lambda](./alexa-lambda-connect.md)
 
