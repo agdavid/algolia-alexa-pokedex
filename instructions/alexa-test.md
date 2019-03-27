@@ -6,7 +6,7 @@ So far, we have created a Voice User Interface, and deployed code to a backend s
 
 2. Access the **Alexa Simulator**, by selecting the **Test** tab from the top navigation menu.  Your browser may request permission to access your microphone.  While it is recommended to do so, it is not required.  Do note that if you don't allow access to the microphone, you must type your utterances to Alexa in the simulator.
 
-3. Notice the dropdown labeled "Skill testing is enabled in:", found just underneath the top navigation menu.
+3. Notice the dropdown labeled "Testing is disabled for this skill.", found just underneath the top navigation menu.
 Toggle the dropdown from **Off** to **Development**.
 
 4. To validate that your skill is working as expected, invoke your skill from the **Alexa Simulator** just below. You can either type or click and hold the mic from the input box to use your voice.
@@ -26,6 +26,6 @@ Toggle the dropdown from **Off** to **Development**.
 
     *  [Echosim.io](https://echosim.io) - a browser-based Alexa skill testing tool that makes it easy to test your skills without carrying a physical device everywhere you go.
 
-**If your sample skill is working properly, congratulations!**
+**If your sample skill is working properly, Congratulations!**
 
 I hope you enjoyed this hands-on Algolia + Alexa tutorial. Questions or comments? Feel free to let me know on [Twitter](https://twitter.com/adavid128)

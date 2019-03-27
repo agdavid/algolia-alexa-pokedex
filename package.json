@@ -1,7 +1,7 @@
 {
   "name": "algolia-alexa-pokedex",
   "version": "1.0.0",
-  "description": "algolia powered alexa skill to teach you and quiz you on pokemon",
+  "description": "algolia powered alexa skill to fetch you pokemon",
   "main": "index.js",
   "scripts": {
     "upload": "node utils/upload/src/index.js",
