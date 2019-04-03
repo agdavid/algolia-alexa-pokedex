@@ -1,32 +1,37 @@
 
 # Create the Algolia Index
 
-1. From the command line, install the node modules:
+1. From the command line, clone the repo:
+```bash
+$ git clone git@github.com:agdavid/algolia-alexa-pokedex.git
+```
+
+2. From the command line, install the node modules:
 ```bash
 $ yarn
 ```
 
-2. From the command line, copy the `.env.defaults` file and name it `.env` for your configuration variables: 
+3. From the command line, copy the `.env.defaults` file and name it `.env` for your configuration variables: 
 ```bash
 $ cp .env.defaults .env
 ```
 
-3. **Go to the [Algolia homepage](https://www.algolia.com/). In the top-right corner of the screen, click the "Login" button.** (If you don't already have an account, you can **create a new one for free [here](https://www.algolia.com/users/sign_up)**.)
+4. **Go to the [Algolia homepage](https://www.algolia.com/). In the top-right corner of the screen, click the "Login" button.** (If you don't already have an account, you can **create a new one for free [here](https://www.algolia.com/users/sign_up)**.)
 
 
-4. Once you have signed into the Algolia Dashboard, navigate to the lefthand side of the screen and Select the **API keys** Link to find the Application ID and Admin API Key. Set the following values in your `.env` file:
+5. Once you have signed into the Algolia Dashboard, navigate to the lefthand side of the screen and Select the **API keys** Link to find the Application ID and Admin API Key. Set the following values in your `.env` file:
 ```
 ALGOLIA_APP_ID=YOUR_APP_ID
 ALGOLIA_ADMIN_API_KEY=YOUR_ADMIN_API_KEY
 ALGOLIA_INDEX_NAME=YOUR_INDEX_NAME_OF_YOUR_CHOICE
 ``` 
 
-5. The folder [`utils/upload`](../utils/upload/src/index.js) has a script that will push the JSON data from [`pokedex.json`](../utils/upload/src/pokedex.json) into an Algolia index. From the command line, run the script with:
+6. The folder [`utils/upload`](../utils/upload/src/index.js) has a script that will push the JSON data from [`pokedex.json`](../utils/upload/src/pokedex.json) into an Algolia index. From the command line, run the script with:
 ```bash
 $ yarn upload
 ```
 
-6. Back in the Algolia Dashboard, navigate to the lefthand side of the screen and Select the **Indices** Link then from the top of the screen Select the **Indices** Link again. In the upper righthand of the screen, locate your named index by typing the name in the **"Filter indices"** searchbox, then select your index. You should see records with a data structure that matches `pokedex.json` like:
+7. Back in the Algolia Dashboard, navigate to the lefthand side of the screen and Select the **Indices** Link then from the top of the screen Select the **Indices** Link again. In the upper righthand of the screen, locate your named index by typing the name in the **"Filter indices"** searchbox, then select your index. You should see records with a data structure that matches `pokedex.json` like:
 
 ```
 {
