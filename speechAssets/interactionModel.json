@@ -24,7 +24,6 @@
                         }
                     ],
                     "samples": [
-                        "{query}",
                         "get {query}",
                         "find {query}"
                     ]
