@@ -170,9 +170,9 @@ function onLaunch(launchRequest, session, response) {
   response.done();
 }
 
-intentHandlers['GetPokemonInfo'] = async function(request,session,response,slots) {
+intentHandlers['SearchIntent'] = async function(request,session,response,slots) {
 
-  if(slots.PokemonName === undefined) {
+  if(slots.query === undefined) {
     response.speechText = 'Looks like you forgot to mention a pokemon. Which pokemon would you like to find? ';
     response.repromptText = 'For example, you can say find Jigglypuff. ';
     response.shouldEndSession = false;
@@ -180,24 +180,24 @@ intentHandlers['GetPokemonInfo'] = async function(request,session,response,slots
     return;
   } else {
 
-    response.cardTitle = `Pokemon Lookup results for: ${slots.PokemonName}`;
+    response.cardTitle = `Pokemon Lookup results for: ${slots.query}`;
     response.cardContent = '';
 
     const results = await index.search({
-      query: slots.PokemonName,
+      query: slots.query,
       hitsPerPage: 1
     });
 
     if (results.hits.length) {
       let pokemon = results.hits[0];
-      response.speechText = `You\'ve requested ${slots.PokemonName}! `;
+      response.speechText = `You said ${slots.query}! `;
       response.speechText += `Gotta catch \'em all and you caught \'em. ${pokemon.name.english} is of type ${pokemon.type.join(', ')}. `;
       response.speechText += `HP of ${pokemon.base.hitPoint}, attack of ${pokemon.base.attack}, and defense of ${pokemon.base.defense}`;
       response.cardContent += response.speechText;
       response.shouldEndSession = true;
       response.done();
     } else {
-      response.speechText = `You\'ve requested ${slots.PokemonName}! `;
+      response.speechText = `You said ${slots.query}! `;
       response.speechText += `Didn\'t catch \'em`;
       response.cardContent += response.speechText;
       response.shouldEndSession = true;
