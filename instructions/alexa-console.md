@@ -21,7 +21,7 @@
 
 	**Note:** You should notice that **Intents** and **Slot Types** will auto populate based on the JSON Interaction Model that you have now applied to your skill. Feel free to explore the changes here, to learn about **Intents**, **Slots**, and **Utterances** open the Alexa [technical documentation in a new tab](https://developer.amazon.com/docs/custom-skills/create-intents-utterances-and-slots.html).
 
-10. **Optional:** Select an intent by expanding the **Intents** from the left side navigation panel. For example, select the **"GetPokemonInfo"** IntentRequest and add some more sample utterances for your newly generated intents. Think of all the different ways that a user could request to make a specific intent happen. A few examples are provided. Be sure to click **Save Model** and **Build Model** after you're done making changes here.
+10. **Optional:** Select an intent by expanding the **Intents** from the left side navigation panel. For example, select the **"SearchIntent"** IntentRequest and add some more sample utterances for your newly generated intents. Think of all the different ways that a user could request to make a specific intent happen. A few examples are provided. Be sure to click **Save Model** and **Build Model** after you're done making changes here.
 
 11. If your interaction model builds successfully, proceed to the next step. If not, you should see an error. Try to resolve the errors.
 
