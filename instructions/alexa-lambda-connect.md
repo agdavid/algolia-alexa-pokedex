@@ -2,9 +2,9 @@
 
 1.  **Return to the [Alexa Developer Console](https://developer.amazon.com/alexa/console/ask) and select your skill from the list.** You may still have a browser tab open if you started at the beginning of this tutorial.
 
-2.  **Select the "AWS Lambda ARN" option for your endpoint.** You have the ability to host your code anywhere that you would like, but for the purposes of simplicity and frugality, we are using AWS Lambda.
+2.  Select the **Endpoint** tab on the left side navigation panel., then **select the "AWS Lambda ARN" option for your endpoint.** You have the ability to host your code anywhere that you would like, but for the purposes of simplicity and frugality, we are using AWS Lambda.
 
-3.  You should see the Alexa Skill ID as "Your Skill ID". **Copy the Amazon Skill ID value for this Skill** by clicking the Copy to Clipboard command; we will use this Amazon Skill ID in the Lambda Management Console.
+3.  You should see the Alexa Skill ID as "Your Skill ID". **Copy the Amazon Skill ID value for this Skill** by highlighting the value and copy the old fashioned way (Ctrl + C or Command + C); we will use this Amazon Skill ID in the Lambda Management Console.
 
 4.  **Go back to the [Lambda console](https://console.aws.amazon.com/lambda/home)** and on the left hand navigation panel, select **Functions**, and then select your Lambda function.
 
@@ -25,11 +25,11 @@ ALGOLIA_INDEX_NAME=YOUR_INDEX_NAME_OF_YOUR_CHOICE
 
 10. Click the **Save** button at the top right of your screen.
 
-11.  You should see the Amazon Resource Name (ARN) for this function in the top right corner of the page.  (You may need to scroll back up.) **Copy the ARN value for this Lambda function** by clicking the small copy button; we will use this ARN in the Alexa Developer Console.
+11.  You should see the Amazon Resource Name (ARN) for this function in the top right corner of the page.  (You may need to scroll back up.) **Copy the ARN value for this Lambda function** by highlighting the value and copy the old fashioned way (Ctrl + C or Command + C); we will use this ARN in the Alexa Developer Console.
 
 12.  **Go back to the [Alexa Developer Console](https://developer.amazon.com/alexa/console/ask) and select your skill from the list.** You may still have a browser tab open if you started at the beginning of this tutorial.
 
-13.  While on the **Build** tab, select the **Endpoint** tab on the left side navigation panel.
+13.  While on the **Build** tab, select the **Endpoint** tab on the left side navigation panel. If not already selected, **select the "AWS Lambda ARN" option for your endpoint.**
 
 14.  Paste your Lambda's ARN into the textbox provided for **Default Region**.
 
