@@ -185,7 +185,10 @@ intentHandlers['SearchIntent'] = async function(request,session,response,slots) 
 
     const results = await index.search({
       query: slots.query,
-      hitsPerPage: 1
+      hitsPerPage: 1,
+      removeStopWords: true,
+      ignorePlurals: true,
+      optionalWords: slots.query
     });
 
     if (results.hits.length) {
